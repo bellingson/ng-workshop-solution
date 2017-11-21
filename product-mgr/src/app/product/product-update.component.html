@@ -1,0 +1,29 @@
+
+<div *ngIf="product">
+
+    <form #f="ngForm" (ngSubmit)="updateProduct()">
+    <table>
+        <tr>
+            <th>Name</th>
+            <td><input type="text" name="name" [(ngModel)]="product.name" required/></td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td><input type="text" name="price" [(ngModel)]="product.price" required/></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><button [disabled]="!f.valid">Update</button></td>
+        </tr>
+    </table>
+</form>
+
+    <h3>Delete Product</h3>
+
+    <form (ngSubmit)="deleteProduct()">
+        <button>Delete</button>
+    </form>
+
+
+
+</div>
